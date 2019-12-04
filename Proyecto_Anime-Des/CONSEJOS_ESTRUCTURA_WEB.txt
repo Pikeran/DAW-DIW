@@ -1,0 +1,34 @@
+Hola kevin te dejo unos consejos, este modelo es sencillo y aunque no es el mejor a mi me sirvió para mi proyecto de ciclo, se trata de
+(MODELO-VISTA-CONTROLADOR)
+
+Divide tu web en diferentes niveles:
+  1- En el nivel superior ten los controllers(controladores), en los controladores se decidira que pagina mostrar en cada momento y como
+  controlar la vista del usuario de la web.
+  EJEMPLO -> main_controller.php -> 
+           <?php
+            #COMPRUEBAS SI EL USUARIO LOGEADO ES ADMIN O USUARIO COMÚN
+            Depende del resultado muestras un html u otro.
+            #esto que te digo se puede hacer desde el php asi que echale un ojo.
+           ?>
+           Tras mostrar el html correspondiente, puedes definir objetos con javascript para facilizarte las llamadas con javascript o 
+           si te resulta mas sencillo haz que cada html tenga su propio js.
+           
+           Al final se quedaria de esta forma.
+           
+           CONTROLLER.php  --------> index.html  <-----------> index.js  <------------->  connexión base de datos -->(SQL o JSON)
+           --------------            ----------                --------
+            CONTROLADOR                VISTA                    MODELO(Opcional orientación a objetos)
+            
+            
+            O incluso puedes controlar partes de la web y mostrar diferentes modulos de tu pagina, o en el controller principal llamar
+            a otro controlador que revise que tipo de usuario eres en otro php aparte.
+            
+            EJEMPLO?¿ ->
+            
+            [CABECERA] ---> REALIZAS COMPROBACIÓN CON PHP Y DESDE EL CONTROLLER LE ADJUNTAS UN HTML QUE SOLO MUESTRE UNA CABECERA.
+            
+                CONTROLLER |---> si admin ---> cabecera admin
+                           |---> no admin ---> cabecera no admin
+                Y todo en el mismo php.              
+                
+                Echale un vistazo a todo y suerte.
